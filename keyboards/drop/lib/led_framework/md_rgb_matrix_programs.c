@@ -17,11 +17,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "md_rgb_matrix.h"
 
-// Teal <-> Salmon
+// Teal (rgb(24,215,204)) <-> Salmon (rgb(255, 114, 118))
 led_setup_t leds_teal_salmon[] = {
     {.hs = 0, .he = 33, .rs = 24, .re = 24, .gs = 215, .ge = 215, .bs = 204, .be = 204, .ef = EF_NONE},
     {.hs = 33, .he = 66, .rs = 24, .re = 255, .gs = 215, .ge = 114, .bs = 204, .be = 118, .ef = EF_NONE},
     {.hs = 66, .he = 100, .rs = 255, .re = 255, .gs = 114, .ge = 114, .bs = 118, .be = 118, .ef = EF_NONE},
+    {.end = 1},
+};
+
+// Teal (rgb(0,255,255)) <-> Pink (rgb(255, 70, 255))
+led_setup_t leds_teal_pink[] = {
+    {.hs = 0, .he = 33, .rs = 0, .re = 0, .gs = 255, .ge = 255, .bs = 255, .be = 255, .ef = EF_NONE},
+    {.hs = 33, .he = 66, .rs = 0, .re = 255, .gs = 255, .ge = 70, .bs = 255, .be = 255, .ef = EF_NONE},
+    {.hs = 66, .he = 100, .rs = 255, .re = 255, .gs = 70, .ge = 70, .bs = 255, .be = 255, .ef = EF_NONE},
     {.end = 1},
 };
 
@@ -90,6 +98,6 @@ led_setup_t leds_rainbow_s[] = {
 // The last entry must be { .end = 1 }
 // Add the new animation name to the list below following its format
 
-void *led_setups[] = {leds_rainbow_s, leds_rainbow_ns, leds_teal_salmon, leds_yellow, leds_red, leds_green, leds_blue, leds_white, leds_white_with_red_stripe, leds_black_with_red_stripe, leds_off};
+void *led_setups[] = {leds_rainbow_s, leds_rainbow_ns, leds_teal_salmon, leds_teal_pink, leds_yellow, leds_red, leds_green, leds_blue, leds_white, leds_white_with_red_stripe, leds_black_with_red_stripe, leds_off};
 
 const uint8_t led_setups_count = sizeof(led_setups) / sizeof(led_setups[0]);
